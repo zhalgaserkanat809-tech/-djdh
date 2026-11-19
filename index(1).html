@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NOVA — стиль дүкені</title>
+<style>
+:root{--ink:#171717;--muted:#777;--paper:#f7f6f2;--lime:#d9ff62;--line:#e7e5df}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--paper);color:var(--ink)}
+a{color:inherit;text-decoration:none}button,input,textarea{font:inherit}
+.top{background:var(--ink);color:#fff;text-align:center;padding:9px;font-size:12px;letter-spacing:1.4px}
+header{position:sticky;top:0;z-index:10;background:#f7f6f2ee;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{max-width:1160px;margin:auto;padding:17px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-size:25px;font-weight:950;letter-spacing:-1.5px}.logo span{color:#789900}
+nav{display:flex;gap:25px;font-size:13px;font-weight:700}nav a:hover{color:#789900}
+.cart-btn{border:0;background:var(--lime);padding:12px 17px;border-radius:30px;font-weight:800;cursor:pointer}
+.hero{max-width:1160px;margin:28px auto 70px;padding:0 22px;display:grid;grid-template-columns:1.05fr .95fr;gap:25px;min-height:480px}
+.hero-copy{background:var(--lime);border-radius:28px;padding:clamp(28px,5vw,65px);display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+.eyebrow{font-size:11px;letter-spacing:2px;font-weight:800}.hero h1{font-size:clamp(46px,7vw,88px);line-height:.9;letter-spacing:-5px;margin:22px 0}.hero p{max-width:390px;line-height:1.7;color:#373d25}
+.primary{display:inline-block;background:var(--ink);color:white;border:0;border-radius:30px;padding:15px 22px;font-weight:800;cursor:pointer;width:max-content;margin-top:15px}
+.hero-art{border-radius:28px;background:linear-gradient(145deg,#d9d5ca,#aaa99d);min-height:390px;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.hero-art:before{content:"N";font-size:360px;font-weight:950;color:#ffffff42;position:absolute;line-height:1}
+.art-card{position:relative;background:#242424;color:white;width:65%;height:290px;border-radius:24px;transform:rotate(-8deg);box-shadow:0 25px 50px #0003;display:flex;flex-direction:column;justify-content:space-between;padding:25px}
+.art-card strong{font-size:42px;letter-spacing:-3px}.art-card small{letter-spacing:3px}
+section{max-width:1160px;margin:0 auto 75px;padding:0 22px}.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:24px}.section-head h2{font-size:clamp(28px,4vw,42px);letter-spacing:-2px;margin:0}.section-head p{color:var(--muted);font-size:13px}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.product{background:white;border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:.2s}.product:hover{transform:translateY(-5px);box-shadow:0 15px 35px #0000000d}
+.product-art{height:235px;display:flex;align-items:center;justify-content:center;font-size:80px;background:#e8e5dc}
+.product:nth-child(2) .product-art{background:#e5e9df}.product:nth-child(3) .product-art{background:#e9e1df}
+.product-info{padding:18px}.product-info h3{margin:0 0 7px;font-size:18px}.product-info p{margin:0;color:var(--muted);font-size:13px}.price-row{display:flex;justify-content:space-between;align-items:center;margin-top:18px;font-weight:900}
+.add{border:0;background:var(--ink);color:white;border-radius:25px;padding:10px 15px;cursor:pointer;font-size:12px;font-weight:800}
+.about{background:#1c1c1c;color:white;border-radius:25px;padding:clamp(25px,5vw,55px);display:grid;grid-template-columns:1fr 1fr;gap:30px}.about h2{font-size:42px;letter-spacing:-2px;margin:0}.about p{color:#c4c4c4;line-height:1.8}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:25px}.feature{border:1px solid #ffffff25;border-radius:15px;padding:17px}.feature b{display:block;font-size:22px;color:var(--lime);margin-bottom:7px}.feature span{font-size:12px;color:#ccc}
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.review{background:white;border:1px solid var(--line);padding:22px;border-radius:18px}.stars{color:#8da900;letter-spacing:3px}.review p{line-height:1.6;font-size:14px}.review b{font-size:13px}
+.review-form{margin-top:22px;background:#eeece5;padding:22px;border-radius:18px;display:grid;grid-template-columns:1fr 1fr;gap:12px}.review-form input,.review-form textarea{border:1px solid #d8d5cb;border-radius:10px;padding:13px;background:white;width:100%}.review-form textarea{grid-column:1/-1;min-height:85px}.review-form button{grid-column:1/-1}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:20px}.contact-card{background:white;border:1px solid var(--line);border-radius:20px;padding:25px}.contact-card h3{margin-top:0}.contact-card p{color:var(--muted);line-height:1.7}.contact-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.contact-links a{background:var(--ink);color:white;padding:12px 16px;border-radius:25px;font-size:13px;font-weight:700}.contact-links a.whatsapp{background:#1e9d58}
+.map{min-height:230px;border-radius:20px;background:linear-gradient(135deg,#dfe7d8,#c7d3c2);display:flex;align-items:center;justify-content:center;text-align:center;padding:25px}.map a{background:white;border-radius:25px;padding:13px 18px;font-weight:800}
+footer{background:#171717;color:white;padding:30px 22px;text-align:center;font-size:12px;color:#aaa}footer b{color:white;font-size:20px}
+.overlay{display:none;position:fixed;inset:0;background:#0008;z-index:30;justify-content:flex-end}.overlay.open{display:flex}.drawer{background:var(--paper);width:min(430px,100%);height:100%;padding:25px;overflow:auto}.drawer-head{display:flex;justify-content:space-between;align-items:center}.close{border:0;background:none;font-size:28px;cursor:pointer}.cart-item{display:flex;justify-content:space-between;gap:10px;padding:15px 0;border-bottom:1px solid var(--line)}.qty button{border:0;background:var(--lime);border-radius:50%;width:25px;height:25px;cursor:pointer}.total{font-size:20px;font-weight:900;margin:22px 0}.checkout{width:100%;text-align:center}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#171717;color:white;padding:12px 18px;border-radius:25px;display:none;z-index:50;font-size:13px}
+@media(max-width:760px){nav{display:none}.hero{grid-template-columns:1fr;margin-top:16px}.hero-art{min-height:280px}.products{grid-template-columns:1fr 1fr}.product-art{height:170px}.about,.contact{grid-template-columns:1fr}.reviews{grid-template-columns:1fr}.features{grid-template-columns:1fr}.section-head p{display:none}}
+@media(max-width:430px){.products{grid-template-columns:1fr}.product-art{height:220px}.hero h1{letter-spacing:-3px}}
+</style>
+</head>
+<body>
+<div class="top">ЖАҢА КОЛЛЕКЦИЯ • ҚАЛА БОЙЫНША ЖЕТКІЗУ</div>
+<header><div class="nav">
+<a class="logo" href="#">NOVA<span>.</span></a>
+<nav><a href="#shop">Тауарлар</a><a href="#about">Біз туралы</a><a href="#reviews">Пікірлер</a><a href="#contact">Байланыс</a></nav>
+<button class="cart-btn" onclick="openCart()">СЕБЕТ (<span id="cartCount">0</span>)</button>
+</div></header>
+<main>
+<div class="hero">
+<div class="hero-copy"><div class="eyebrow">NOVA STORE / 2026</div><h1>ӨЗ СТИЛІҢДІ<br>ТАП.</h1><p>Күнделікті образға арналған ерекше аксессуарлар мен стильді заттар. Өзіңе ұнайтынын таңда!</p><a class="primary" href="#shop">САТЫП АЛУ →</a></div>
+<div class="hero-art"><div class="art-card"><small>YOUR STYLE. YOUR RULES.</small><strong>NOVA<br>STORE</strong><small>EST. 2026 — KZ</small></div></div>
+</div>
+<section id="shop">
+<div class="section-head"><div><div class="eyebrow">БІЗДІҢ ТАҢДАУ</div><h2>Танымал тауарлар</h2></div><p>Сапа • Стиль • Ыңғайлылық</p></div>
+<div class="products" id="products">
+<article class="product"><div class="product-art">🎧</div><div class="product-info"><h3>Air Sound құлаққап</h3><p>Күнделікті қолдануға ыңғайлы</p><div class="price-row"><span>12 990 ₸</span><button class="add" onclick="addToCart(0)">СЕБЕТКЕ +</button></div></div></article>
+<article class="product"><div class="product-art">⌚</div><div class="product-info"><h3>Smart сағат</h3><p>Заманауи әрі минимал дизайн</p><div class="price-row"><span>18 500 ₸</span><button class="add" onclick="addToCart(1)">СЕБЕТКЕ +</button></div></div></article>
+<article class="product"><div class="product-art">🎒</div><div class="product-info"><h3>Urban рюкзак</h3><p>Оқу мен күнделікті өмірге</p><div class="price-row"><span>9 900 ₸</span><button class="add" onclick="addToCart(2)">СЕБЕТКЕ +</button></div></div></article>
+</div></section>
+<section id="about"><div class="about"><div><div class="eyebrow">NOVA ТУРАЛЫ</div><h2>Қарапайым.<br>Ерекше.<br>Сапалы.</h2></div><div><p>NOVA — стиль мен ыңғайлылықты бағалайтындарға арналған онлайн дүкен. Біз күнделікті өмірге қажет, дизайны заманауи тауарларды ұсынамыз. Тапсырыс беру оңай, байланысқа шығу жылдам.</p><div class="features"><div class="feature"><b>01</b><span>Сапалы таңдау</span></div><div class="feature"><b>02</b><span>Жылдам байланыс</span></div><div class="feature"><b>03</b><span>Ыңғайлы тапсырыс</span></div></div></div></div></section>
+<section id="reviews"><div class="section-head"><div><div class="eyebrow">КЛИЕНТТЕР ПІКІРІ</div><h2>Сіз не дейсіз?</h2></div></div>
+<div class="reviews" id="reviewList">
+<div class="review"><div class="stars">★★★★★</div><p>Тапсырыс беру өте оңай екен. Дизайны ұнады!</p><b>— Айдана</b></div>
+<div class="review"><div class="stars">★★★★★</div><p>Жауап тез келді, бәрі түсінікті.</p><b>— Нұрсұлтан</b></div>
+<div class="review"><div class="stars">★★★★★</div><p>Тауар таңдауы жақсы, тағы тапсырыс беремін.</p><b>— Әлия</b></div>
+</div>
+<form class="review-form" onsubmit="addReview(event)"><input id="reviewName" placeholder="Атыңыз" required><input id="reviewRating" placeholder="Баға (мысалы: 5/5)" value="5/5"><textarea id="reviewText" placeholder="Пікіріңізді жазыңыз..." required></textarea><button class="primary" type="submit">ПІКІР ҚАЛДЫРУ</button></form>
+</section>
+<section id="contact"><div class="section-head"><div><div class="eyebrow">БІЗБЕН БАЙЛАНЫС</div><h2>Сұрағыңыз бар ма?</h2></div></div>
+<div class="contact"><div class="contact-card"><h3>NOVA STORE</h3><p>📞 Телефон: <a href="tel:+77000000000">+7 700 000 00 00</a><br>📍 Мекенжай: Қазақстан, Қызылорда қаласы<br>🕘 Жұмыс уақыты: 09:00–20:00</p><div class="contact-links"><a class="whatsapp" href="https://wa.me/77000000000" target="_blank">WhatsApp ↗</a><a href="https://instagram.com/" target="_blank">Instagram ↗</a><a href="tel:+77000000000">Қоңырау шалу</a></div></div>
+<div class="map"><div><div style="font-size:42px">📍</div><h3>Бізді картадан табыңыз</h3><a href="https://www.google.com/maps/search/?api=1&query=Kyzylorda+Kazakhstan" target="_blank">КАРТАНЫ АШУ →</a></div></div></div>
+</section>
+</main>
+<footer><b>NOVA<span style="color:#d9ff62">.</span></b><p>© 2026 NOVA STORE. Барлық құқықтар қорғалған.</p></footer>
+<div class="overlay" id="overlay" onclick="if(event.target===this)closeCart()"><div class="drawer"><div class="drawer-head"><h2>Сіздің себетіңіз</h2><button class="close" onclick="closeCart()">×</button></div><div id="cartItems"></div><div class="total" id="total">Жалпы: 0 ₸</div><button class="primary checkout" onclick="checkout()">WHATSAPP АРҚЫЛЫ ТАПСЫРЫС БЕРУ →</button></div></div>
+<div class="toast" id="toast"></div>
+<script>
+const products=[{name:"Air Sound құлаққап",price:12990},{name:"Smart сағат",price:18500},{name:"Urban рюкзак",price:9900}];
+let cart=[];
+function money(n){return n.toLocaleString("ru-RU")+" ₸"}
+function notice(t){const el=document.getElementById("toast");el.textContent=t;el.style.display="block";setTimeout(()=>el.style.display="none",2200)}
+function addToCart(i){const found=cart.find(x=>x.id===i);if(found)found.qty++;else cart.push({id:i,qty:1});renderCart();notice("Тауар себетке қосылды!")}
+function renderCart(){document.getElementById("cartCount").textContent=cart.reduce((s,x)=>s+x.qty,0);const box=document.getElementById("cartItems");box.innerHTML="";let sum=0;
+cart.forEach(x=>{const p=products[x.id];sum+=p.price*x.qty;const row=document.createElement("div");row.className="cart-item";row.innerHTML=`<div><b>${p.name}</b><br><small>${money(p.price)} × ${x.qty}</small></div><div class="qty"><button onclick="changeQty(${x.id},-1)">−</button> ${x.qty} <button onclick="changeQty(${x.id},1)">+</button></div>`;box.appendChild(row)});
+if(!cart.length)box.innerHTML="<p>Себет әзірге бос. Ұнаған тауарыңызды таңдаңыз.</p>";document.getElementById("total").textContent="Жалпы: "+money(sum)}
+function changeQty(id,d){const x=cart.find(x=>x.id===id);if(!x)return;x.qty+=d;if(x.qty<=0)cart=cart.filter(y=>y.id!==id);renderCart()}
+function openCart(){document.getElementById("overlay").classList.add("open")}
+function closeCart(){document.getElementById("overlay").classList.remove("open")}
+function checkout(){if(!cart.length){notice("Алдымен себетке тауар қосыңыз");return}let msg="Сәлеметсіз бе! NOVA дүкенінен тапсырыс бергім келеді:%0A";let sum=0;cart.forEach(x=>{let p=products[x.id];msg+=`%0A${p.name} — ${x.qty} дана`;sum+=p.price*x.qty});msg+=`%0A%0AЖалпы: ${money(sum)}`;window.open("https://wa.me/77000000000?text="+msg,"_blank")}
+function addReview(e){e.preventDefault();const name=document.getElementById("reviewName").value.trim(),rating=document.getElementById("reviewRating").value.trim(),message=document.getElementById("reviewText").value.trim();if(!name||!message)return;const card=document.createElement("div");card.className="review";const stars=document.createElement("div");stars.className="stars";stars.textContent="★".repeat(Math.max(1,Math.min(5,parseInt(rating)||5)));const p=document.createElement("p");p.textContent=message;const b=document.createElement("b");b.textContent="— "+name;card.append(stars,p,b);document.getElementById("reviewList").prepend(card);e.target.reset();notice("Пікіріңіз қосылды!")}
+renderCart();
+</script>
+</body>
+</html>
